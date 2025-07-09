@@ -116,3 +116,46 @@ Ein FTP Benutzer habe ich durch die normale Linux Benutzer Einrichtung hinzugef�
 Danach habe ich ohne Zwischentest direkt auch FTPS eingerichtet. Hier kam nun mein grosser Zeitverschwender. Jede FTPS Verbindung wurde denied und der Fehler war nicht richtig zu identifizieren. Nach einigen Stunden rumversuchen habe ich es mal ohne FTPS versucht und konnte identifizieren, dass das Problem nicht an FTPS lag. FTPS hat die Fehlernachricht obfuskiert und daher wurde davor eine fehlerhafte Fehlermeldung angezeigt. Nach dem temporären Entfernen von FTPS konnte ich herausfinden, dass das Problem an unzureichender Rechte vom ftpuser lag. Nach Hinzufügen der nötigen Rechte und wiederverbindung von FTPS funktionierte dann alles.
 
 ![Screenshot 2025-06-19 094259](https://github.com/user-attachments/assets/a33fce02-7ac7-4cc0-909a-6a47d7f700a2)
+
+## Aufgabe 10 - Wordpress Migration
+
+### Stufe 1 - 3
+
+Zuerst habe ich mich per FTP auf den Server vom Lehrer verbunden und habe die Wordpress Daten auf meinem lokalen Notebook heruntergeladen.
+Das SQL File habe ich im Datenbankserver importiert.
+
+Die restlichen Dateien habe ich auf den Webserver in den Projektordner reingepackt.
+In der wp-config.php Datei habe ich dann die Datenbankserver Details eingerichtet.
+
+Dann habe mich testweise mal per Website darauf verbunden.
+Die Website hat mich dann zur alten Website vom Lehrer weitergeleitet.
+
+Ich musste 2 Anpassungen in der DB machen (WP_HOME und WP_SITEURL zu meiner Domain wechseln). Nach diesen Anpassungen wurde ich nicht mehr weitergeleitet und war nun auf der neuen Wordpress Instanz meines AWS Servers.
+
+![Screenshot 2025-06-19 160304](https://github.com/user-attachments/assets/3c6c3e19-def8-466c-af7a-20a6278b6a9a)
+
+
+## Aufgabe 11 - Backup
+
+### Stufe 1 - 3
+
+Ich habe 2 BASH Files erstellt.
+In der Datei für den Webserver wird eine tar.gz Datei aus dem wp-content Ordner gemacht und in /var/backups/wp-content gespeichert. Der Name wird anhand vom Backup-Datum angepasst.
+
+![Screenshot 2025-06-19 141614](https://github.com/user-attachments/assets/d1f0a667-0bb0-4753-9b6b-5d7e411def35)
+
+In der Datei für den Datenbankserver wird eine .gz Datei aus einem mysqldump der wordpress_db Datenbank erstellt. Dieser wird dann auch im Ordner /var/backups/mysql gespeichert und der Name wird auch anhand vom Backup-Datum angepasst.
+
+![Screenshot 2025-06-19 141705](https://github.com/user-attachments/assets/53e46635-3877-4ccd-a272-efc68bdf6b40)
+
+Bei beiden Files wird am Schluss eine E-Mail per msmtp an meine private E-Mail Adresse gesendet. Der Mailserver ist bereits bestehend auf einem meiner Homeserver. MSMTP hat in diesem Fall nur die Verbindung von Linux zum externen Mailserver übernommen.
+Beide Files wurden dann in crontab eingerichtet und werden jede Nacht ausgeführt.
+
+![Screenshot 2025-06-19 103743](https://github.com/user-attachments/assets/481c2c2e-bbe7-4d00-86a2-599919755c6a)
+![Screenshot 2025-06-19 141647](https://github.com/user-attachments/assets/8f10c513-8eea-45de-b8bb-b4ab6b54f4fc)
+
+Am Schluss habe ich das ganze noch erfolgreich getestet:
+
+![Screenshot 2025-06-19 142143](https://github.com/user-attachments/assets/ae93a032-3568-45c0-b0c7-6329b3811edf)
+![Screenshot 2025-06-19 141751](https://github.com/user-attachments/assets/acebf69a-0eaa-463c-b356-b71f14b18e46)
+
