@@ -140,11 +140,11 @@ Ich musste 2 Anpassungen in der DB machen (WP_HOME und WP_SITEURL zu meiner Doma
 ### Stufe 1 - 3
 
 Ich habe 2 BASH Files erstellt.
-In der Datei für den Webserver wird eine tar.gz Datei aus dem wp-content Ordner gemacht und in /var/backups/wp-content gespeichert. Der Name wird anhand vom Backup-Datum angepasst.
+In der Datei für den Webserver wird eine tar.gz Datei aus dem wp-content Ordner gemacht und in /var/backups/wp-content gespeichert. Der Name wird anhand vom Backup-Datum angepasst. Alte Backups werden gelöscht.
 
 ![Screenshot 2025-06-19 141614](https://github.com/user-attachments/assets/d1f0a667-0bb0-4753-9b6b-5d7e411def35)
 
-In der Datei für den Datenbankserver wird eine .gz Datei aus einem mysqldump der wordpress_db Datenbank erstellt. Dieser wird dann auch im Ordner /var/backups/mysql gespeichert und der Name wird auch anhand vom Backup-Datum angepasst.
+In der Datei für den Datenbankserver wird eine .gz Datei aus einem mysqldump der wordpress_db Datenbank erstellt. Dieser wird dann auch im Ordner /var/backups/mysql gespeichert und der Name wird auch anhand vom Backup-Datum angepasst. Alte Backups werden gelöscht.
 
 ![Screenshot 2025-06-19 141705](https://github.com/user-attachments/assets/53e46635-3877-4ccd-a272-efc68bdf6b40)
 
