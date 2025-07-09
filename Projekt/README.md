@@ -3,7 +3,7 @@
 ## Übersicht
 # Projektdokumentation – Webserver-Projekt
 
-Diese Dokumentation ist nach den Aufgaben (1–14) gegliedert. Jede Aufgabe ist in drei Phasen unterteilt. Bitte tragen Sie Ihre Ergebnisse jeweils unter den entsprechenden Abschnitten ein.
+Diese Dokumentation ist nach den Aufgaben (1–14) gegliedert. Jede Aufgabe ist in drei Phasen unterteilt.
 
 ---
 
@@ -35,6 +35,9 @@ Die DNS Aufgabe habe ich über meine private Domain gemacht. Dazu habe ich ganz 
 ## Aufgabe 5 - Webserver
 
 ### Stufe 1 - 3
+
+Nun kommt die Frage: Apache oder NGINX?
+Entschieden habe ich mich für Apache, weil ich persönlich Konfigurationen in Apache deutlich einfacher/übersichtlicher finde als bei NGINX.
 
 Ich habe für den Webserver 2 VirtualHost Files von Apache erstellt.
 
@@ -78,6 +81,9 @@ Hier habe ich dann alles getestet.
 ## Aufgabe 7 - MySQL/MariaDB-Datenbankserver
 
 ### Stufe 1 - 3
+
+Nun kommt die Frage: MySQL oder MariaDB?
+Entschieden habe ich mich für MariaDB, weil es generell Performancetechnisch besser läuft.
 
 Zuerst habe ich mich auf meiner zweiten Instanz in der Umgebung verbunden (Den Datenbankserver).
 Auf dieser Insatz habe ich MariaDB installiert und in der Config die externe Erreichbarkeit angemacht. (Listen-IP von 127.0.0.1 to 0.0.0.0)
@@ -176,3 +182,9 @@ Danach wurden auch alle Probleme in den Site-Health Seiten behoben:
 
 ![image](https://github.com/user-attachments/assets/3bb25dbd-d852-4085-9483-9ef9e937c6fd)
 
+
+## Reflexion
+
+Das Projekt hat mir sehr Spass gemacht und ich kann mir vorstellen sowas öfter auch geschäftlich oder privat zu machen.
+Ich konnte aus diesem Projekt bereits vieles von privaten Projekten ableiten, da ich privat gerne mit Servern arbeite und auch persönlich zuhause einen Homeserver Proxmox Cluster habe.
+Die meisten Aufgaben kamen mir relativ einfach vor, wobei ich speziell bei der FTP Aufgabe Mühe hatte. Dieses Problem hat aber nun auch meine Kenntnisse ein Stück erweitert. 
