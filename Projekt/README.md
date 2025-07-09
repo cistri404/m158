@@ -15,8 +15,6 @@ Den Projektplan habe ich über das Online-Tool "Tomsplanner" erstellt:
 
 *https://plan.tomsplanner.com/#doc=WBnUTMsSTcwgZFHvCGcm*
 
-## Aufgabe 2 - Architekturdiagramm
-
 ## Aufgabe 3 - Umgebung aufbauen/einrichten
 
 ### Stufe 1
@@ -95,6 +93,8 @@ Danach habe ich das Passwort vom Root User geändert. Uneingeschränkte Berechti
 
 ## Aufgabe 8 - PhpMyAdmin
 
+### Stufe 1 - 3
+
 Die PhpMyAdmin Seite habe ich wieder auf den Webserver installiert mit dem apt-Befehl. Die Nebeninstallation einer MySQL DB habe ich abgelehnt und im Nachhinein in der Config von PhpMyAdmin die DB Angaben mit externem Host eingerichtet. 
 
 Um PHPMyAdmin nun noch über die Subdomain verfügbar zu machen, wurde folgendes Feld in der SSL VirtualHost hinzugefügt. Dieser Feld sagt, dass Anfragen die den /phpmyadmin Subfolder aufrufen, zum internen Ordner /usr/share/phpmyadmin geleitet werden.
@@ -108,6 +108,8 @@ Zuletzt wurde dies noch erfolgreich getestet:
 
 
 ## Aufgabe 9 - FTP-Server
+
+### Stufe 1 - 3
 
 Den FTP Server habe ich über vsftpd installiert. Das Paket war einfach zu installieren und die Config habe ich durch diverse Dokumentationen und ChatGPT-Anfragen ausfüllen können.
 
@@ -160,6 +162,8 @@ Am Schluss habe ich das ganze noch erfolgreich getestet:
 ![Screenshot 2025-06-19 141751](https://github.com/user-attachments/assets/acebf69a-0eaa-463c-b356-b71f14b18e46)
 
 ## Aufgabe 12 - Testing
+
+### Stufe 1 - 3
 
 Zuerst habe ich ein Testkatalog mit 10 Testfällen mithilfe von ChatGPT erstellt und nach der Migration alles nacheinander getestet.
 Fehler habe ich gekennzeichnet und danach behoben.
