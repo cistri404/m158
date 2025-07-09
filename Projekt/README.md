@@ -168,3 +168,7 @@ Fehler habe ich gekennzeichnet und danach behoben.
 
 Danach wurden auch alle Probleme in den Site-Health Seiten behoben:
 
+![image](https://github.com/user-attachments/assets/7c035ccd-e766-4d60-92e7-555cd6642e7f)
+
+![image](https://github.com/user-attachments/assets/3bb25dbd-d852-4085-9483-9ef9e937c6fd)
+
