@@ -159,3 +159,12 @@ Am Schluss habe ich das ganze noch erfolgreich getestet:
 ![Screenshot 2025-06-19 142143](https://github.com/user-attachments/assets/ae93a032-3568-45c0-b0c7-6329b3811edf)
 ![Screenshot 2025-06-19 141751](https://github.com/user-attachments/assets/acebf69a-0eaa-463c-b356-b71f14b18e46)
 
+## Aufgabe 12 - Testing
+
+Zuerst habe ich ein Testkatalog mit 10 Testfällen mithilfe von ChatGPT erstellt und nach der Migration alles nacheinander getestet.
+Fehler habe ich gekennzeichnet und danach behoben.
+
+![Screenshot 2025-06-19 152219](https://github.com/user-attachments/assets/8383bc91-9fb1-4bea-9fbd-cd7d7099c92a)
+
+Danach wurden auch alle Probleme in den Site-Health Seiten behoben:
+
