@@ -29,6 +29,8 @@ Innerhalb der VMs habe ich dann die Netzwerkumgebung getestet:
 
 ## Aufgabe 4 - DNS
 
+### Stufe 2
+
 Die DNS Aufgabe habe ich über meine private Domain gemacht. Dazu habe ich ganz einfach in meinem Nameserver (Cloudflare) ein DNS Eintrag mit der Subdomain "m158" hinzugefügt und auf die elastische IP Adresse des Webservers gelinkt.
 ![image](https://github.com/user-attachments/assets/a6a8f06c-72be-4634-a5d7-c9c98f5f75bb)
 
@@ -69,6 +71,8 @@ max_execution_time = 120
 display_errors = Off
 ```
 
+Hier habe ich dann alles getestet.
+
 ![Screenshot 2025-06-18 164621](https://github.com/user-attachments/assets/a18ed864-5c28-4507-b6d7-177e71fdcb29)
 
 
@@ -80,4 +84,35 @@ display_errors = Off
 Zuerst habe ich mich auf meiner zweiten Instanz in der Umgebung verbunden (Den Datenbankserver).
 Auf dieser Insatz habe ich MariaDB installiert und in der Config die externe Erreichbarkeit angemacht. (Listen-IP von 127.0.0.1 to 0.0.0.0)
 
-Dann habe ich einen 
+Dann habe ich einen Wordpress User erstellt und ihm die Berechtigungen gegeben, die er braucht:
+
+![Screenshot 2025-06-18 164912](https://github.com/user-attachments/assets/74247cff-7984-4007-950f-fce58959c7f7)
+
+Danach habe ich das Passwort vom Root User geändert. Uneingeschränkte Berechtigung hat er bereits.
+
+![Screenshot 2025-06-18 165052](https://github.com/user-attachments/assets/59af2c3d-6923-408a-8c19-f860ab801b52)
+
+
+## Aufgabe 8 - PhpMyAdmin
+
+Die PhpMyAdmin Seite habe ich wieder auf den Webserver installiert mit dem apt-Befehl. Die Nebeninstallation einer MySQL DB habe ich abgelehnt und im Nachhinein in der Config von PhpMyAdmin die DB Angaben mit externem Host eingerichtet. 
+
+Um PHPMyAdmin nun noch über die Subdomain verfügbar zu machen, wurde folgendes Feld in der SSL VirtualHost hinzugefügt. Dieser Feld sagt, dass Anfragen die den /phpmyadmin Subfolder aufrufen, zum internen Ordner /usr/share/phpmyadmin geleitet werden.
+
+![Screenshot 2025-06-18 170714](https://github.com/user-attachments/assets/9de18a21-faa2-44fb-aade-0bfaf303452a)
+
+
+Zuletzt wurde dies noch erfolgreich getestet:
+
+![Screenshot 2025-06-18 170705](https://github.com/user-attachments/assets/7632d4b9-e44e-4f63-92d4-efbba1063da8)
+
+
+## Aufgabe 9 - FTP-Server
+
+Den FTP Server habe ich über vsftpd installiert. Das Paket war einfach zu installieren und die Config habe ich durch diverse Dokumentationen und ChatGPT-Anfragen ausfüllen können.
+
+Ein FTP Benutzer habe ich durch die normale Linux Benutzer Einrichtung hinzugefügt und ihm Rechte auf den Root Folder für das Projekt gegeben.
+
+Danach habe ich ohne Zwischentest direkt auch FTPS eingerichtet. Hier kam nun mein grosser Zeitverschwender. Jede FTPS Verbindung wurde denied und der Fehler war nicht richtig zu identifizieren. Nach einigen Stunden rumversuchen habe ich es mal ohne FTPS versucht und konnte identifizieren, dass das Problem nicht an FTPS lag. FTPS hat die Fehlernachricht obfuskiert und daher wurde davor eine fehlerhafte Fehlermeldung angezeigt. Nach dem temporären Entfernen von FTPS konnte ich herausfinden, dass das Problem an unzureichender Rechte vom ftpuser lag. Nach Hinzufügen der nötigen Rechte und wiederverbindung von FTPS funktionierte dann alles.
+
+![Screenshot 2025-06-19 094259](https://github.com/user-attachments/assets/a33fce02-7ac7-4cc0-909a-6a47d7f700a2)
