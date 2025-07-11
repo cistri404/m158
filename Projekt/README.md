@@ -76,8 +76,6 @@ Hier habe ich dann alles getestet.
 
 ![Screenshot 2025-06-18 164621](https://github.com/user-attachments/assets/a18ed864-5c28-4507-b6d7-177e71fdcb29)
 
-<img width="796" height="536" alt="image" src="https://github.com/user-attachments/assets/1ab05d1d-4010-4783-b438-f20326680760" />
-
 
 ## Aufgabe 7 - MySQL/MariaDB-Datenbankserver
 
